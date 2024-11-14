@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Cadastro {
+  id: Int!
+  cotaId: Int!
+  numeroCota: Int!
+  nomeUsuario: String
+  contato: String
+  parcelamento: String
+}
+
+type Query {
+  cadastros: [Cadastro!]!
+  cadastro(id: Int!): Cadastro!
+}
+
+type Mutation {
+  createCadastro(data: CreateCadastroInput!): Cadastro!
+  updateCadastro(id: Int!, data: UpdateCadastroInput!): Cadastro!
+  deleteCadastro(id: Int!): Boolean!
+}
+
+input CreateCadastroInput {
+  cotaId: Int!
+  numeroCota: Int!
+  nomeUsuario: String
+  contato: String
+  parcelamento: String
+  dataCadastro: DateTime
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input UpdateCadastroInput {
+  id: Int!
+  cotaId: Int!
+  numeroCota: Int!
+  nomeUsuario: String
+  contato: String
+  parcelamento: String
+}
